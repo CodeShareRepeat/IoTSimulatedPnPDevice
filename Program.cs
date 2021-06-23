@@ -29,10 +29,9 @@ namespace SimulatedDevice
 
             _logger.LogInformation($"Start Client Actions.");
 
-            await ClientFlow.PerformClientActionsAsync(_logger, deviceClient, cts);
+            await ClientFlow.PerformClientActionsAsync(_logger, deviceClient, cts.Token);
 
-            _logger.LogInformation("Thank you and goodbye!");
-
+            await deviceClient.CloseAsync();
         }
 
         private static void SetCancelationAction(CancellationTokenSource cts)
@@ -41,7 +40,8 @@ namespace SimulatedDevice
             {
                 eventArgs.Cancel = true;
                 cts.Cancel();
-                _logger.LogInformation("Sample execution cancellation requested; will exit.");
+                _logger.LogInformation("Thank you and goodbye!");
+
             };
         }
 

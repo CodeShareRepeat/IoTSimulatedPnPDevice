@@ -10,14 +10,14 @@ namespace SimulatedDevice.Infra
 {
     internal class ClientFlow
     {
-        internal static async Task PerformClientActionsAsync(ILogger _logger, DeviceClient deviceClient, CancellationTokenSource cts)
+        internal static async Task PerformClientActionsAsync(ILogger _logger, DeviceClient deviceClient, CancellationToken ctx)
         {
             MessageSender messageSender = new(deviceClient, _logger);
             PropertySender propertySender = new(deviceClient, _logger);
 
             await propertySender.SendProperties();
-            await messageSender.SendTelemetryAsync(cts.Token);
-            await deviceClient.CloseAsync();
+            await messageSender.SendTelemetryAsync(ctx);
+
         }
     }
 }
