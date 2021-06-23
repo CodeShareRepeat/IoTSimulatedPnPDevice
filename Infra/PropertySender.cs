@@ -1,10 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using IoTSimulatedPnPDevice.MessageObjects.Properties;
 using Microsoft.Azure.Devices.Client;
-using Microsoft.Azure.Devices.Shared;
 using Microsoft.Extensions.Logging;
-
 namespace SimulatedDevice.Infra
 {
     public class PropertySender

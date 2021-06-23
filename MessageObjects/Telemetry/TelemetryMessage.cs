@@ -2,9 +2,8 @@
 using System.Text;
 using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
-using SimulatedDevice.MessageObjects;
 
-namespace SimulatedDevice.Infra
+namespace IoTSimulatedPnPDevice.MessageObjects.Telemetry
 {
     internal class TelemetryMessage
     {

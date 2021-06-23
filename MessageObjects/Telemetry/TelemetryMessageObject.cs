@@ -1,16 +1,10 @@
-﻿
-namespace SimulatedDevice.MessageObjects
+﻿namespace IoTSimulatedPnPDevice.MessageObjects.Telemetry
 {
-
-    /// <summary>
-    /// Message class for the divice to the IoT hub
-    /// </summary>
     internal class TelemetryMessageObject
     {
-        public double Temperature { get; private set; }
-        public double Humidity { get; private set; }
-
-        public TelemetryMessageObject(double temperature, double humidity)
+        internal double Temperature { get; private set; }
+        internal double Humidity { get; private set; }
+        internal TelemetryMessageObject(double temperature, double humidity)
         {
             Temperature = temperature;
             Humidity = humidity;
