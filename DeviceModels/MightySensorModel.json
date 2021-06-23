@@ -1,0 +1,50 @@
+{
+    "@id": "dtmi:devIotCentral:MightySensorDevice13x7;2",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:devIotCentral:MightySensorDevice13x7:temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Temperature"
+        },
+        "name": "Temperature",
+        "schema": "double",
+        "unit": "degreeCelsius"
+      },
+      {
+        "@id": "dtmi:devIotCentral:MightySensorDevice13x7:name;2",
+        "@type": "Property",
+        "displayName": {
+          "en": "Name"
+        },
+        "name": "Name",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@id": "dtmi:devIotCentral:MightySensorDevice13x7:humidity;2",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Humidity"
+        },
+        "name": "Humidity",
+    
+        "schema": "double"
+      }
+    ],
+    "displayName": {
+      "en": "MightySensorDevice1"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+  
