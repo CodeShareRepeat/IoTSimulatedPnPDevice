@@ -31,7 +31,7 @@ namespace SimulatedDevice
             PropertySender propertySender = new(deviceClient, _logger);
 
             await propertySender.SendPropertiesAsync();
-            await messageSender.StartWorkingAsync(cts.Token);
+            await messageSender.SendTelemetryAsync(cts.Token);
 
             await deviceClient.CloseAsync();
 

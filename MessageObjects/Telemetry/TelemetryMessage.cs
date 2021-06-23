@@ -5,9 +5,10 @@ using Newtonsoft.Json;
 
 namespace IoTSimulatedPnPDevice.MessageObjects.Telemetry
 {
-    internal class TelemetryMessage
+    public class TelemetryMessage
     {
-        internal static Message Create(double temp, double hum)
+
+        public static Message Create(double temp, double hum)
         {
             TelemetryMessageObject messageObject = new(temp, hum);
 

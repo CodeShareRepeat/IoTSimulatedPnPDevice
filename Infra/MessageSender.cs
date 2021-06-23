@@ -18,7 +18,7 @@ namespace SimulatedDevice.Infra
             _deviceClient = deviceClient;
             _logger = logger;
         }
-        public async Task StartWorkingAsync(CancellationToken cancellationToken)
+        public async Task SendTelemetryAsync(CancellationToken cancellationToken)
         {
 
             while (!cancellationToken.IsCancellationRequested)
