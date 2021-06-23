@@ -10,7 +10,6 @@ namespace IoTSimulatedPnPDevice.Domain.Properties.MessageObjects
             TwinCollection properties = new();
             properties["Name"] = "Chris_Sensor1_ABCD";
             properties["SerialNumber"] = "123-456-789";
-            properties["myprop"] = "xyz";
             return properties;
         }
     }
