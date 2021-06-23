@@ -1,4 +1,4 @@
-﻿namespace IoTSimulatedPnPDevice.MessageObjects.Telemetry
+﻿namespace IoTSimulatedPnPDevice.Domain.Telemetry.MessageObjects
 {
     public class TelemetryMessageObject
     {

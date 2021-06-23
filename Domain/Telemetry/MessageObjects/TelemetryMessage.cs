@@ -3,7 +3,7 @@ using System.Text;
 using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
 
-namespace IoTSimulatedPnPDevice.MessageObjects.Telemetry
+namespace IoTSimulatedPnPDevice.Domain.Telemetry.MessageObjects
 {
     public class TelemetryMessage
     {

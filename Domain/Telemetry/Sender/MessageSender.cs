@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using IoTSimulatedPnPDevice.MessageObjects.Telemetry;
+using IoTSimulatedPnPDevice.Domain.Telemetry.MessageObjects;
 using Microsoft.Azure.Devices.Client;
 using Microsoft.Extensions.Logging;
 
 
-namespace SimulatedDevice.Infra
+namespace IoTSimulatedPnPDevice.Domain.Telemetry.Sender
 {
     public class MessageSender
     {

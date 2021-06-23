@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
-using IoTSimulatedPnPDevice.MessageObjects.Properties;
+using IoTSimulatedPnPDevice.Domain.Properties.MessageObjects;
 using Microsoft.Azure.Devices.Client;
 using Microsoft.Extensions.Logging;
-namespace SimulatedDevice.Infra
+
+namespace IoTSimulatedPnPDevice.Domain.Properties.SendData
 {
     public class PropertySender
     {
@@ -15,11 +16,13 @@ namespace SimulatedDevice.Infra
             _logger = logger;
         }
 
-        public async Task SendPropertiesAsync()
+        public Task SendProperties()
         {
             var propertyMessage = PropertyMessage.Create();
 
-            await _deviceClient.UpdateReportedPropertiesAsync(propertyMessage);
+            _deviceClient.UpdateReportedPropertiesAsync(propertyMessage);
+
+            return Task.CompletedTask;
         }
     }
 }

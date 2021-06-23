@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Azure.Devices.Shared;
 
-namespace IoTSimulatedPnPDevice.MessageObjects.Properties
+namespace IoTSimulatedPnPDevice.Domain.Properties.MessageObjects
 {
     internal class PropertyMessage
     {

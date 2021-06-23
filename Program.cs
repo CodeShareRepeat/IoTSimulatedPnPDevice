@@ -27,13 +27,11 @@ namespace SimulatedDevice
 
             using DeviceClient deviceClient = ClientCreator.SetupDeviceClient(_logger);
 
-            MessageSender messageSender = new(deviceClient, _logger);
-            PropertySender propertySender = new(deviceClient, _logger);
+            _logger.LogInformation($"Start Client Actions.");
 
-            await propertySender.SendPropertiesAsync();
-            await messageSender.SendTelemetryAsync(cts.Token);
+            await ClientFlow.PerformClientActionsAsync(_logger, deviceClient, cts);
 
-            await deviceClient.CloseAsync();
+            _logger.LogInformation("Thank you and goodbye!");
 
         }
 
