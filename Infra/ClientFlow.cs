@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using IoTSimulatedPnPDevice.Domain.Command;
 using IoTSimulatedPnPDevice.Domain.Properties.SendData;
 using IoTSimulatedPnPDevice.Domain.Telemetry.Sender;
 using Microsoft.Azure.Devices.Client;
@@ -14,7 +15,9 @@ namespace SimulatedDevice.Infra
         {
             MessageSender messageSender = new(deviceClient, _logger);
             PropertySender propertySender = new(deviceClient, _logger);
+            CommandHandler commandHandler = new(deviceClient, _logger);
 
+            await commandHandler.RegisterCommandsAsync(ctx);
             await propertySender.SendProperties();
             await messageSender.SendTelemetryAsync(ctx);
 

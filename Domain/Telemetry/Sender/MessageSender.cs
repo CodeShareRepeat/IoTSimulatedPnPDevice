@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using IoTSimulatedPnPDevice.Domain.Telemetry.MessageObjects;
+using IoTSimulatedPnPDevice.Infra;
 using Microsoft.Azure.Devices.Client;
 using Microsoft.Extensions.Logging;
 
@@ -26,9 +27,12 @@ namespace IoTSimulatedPnPDevice.Domain.Telemetry.Sender
                 var randomTemperature = Math.Round(_random.NextDouble() * 40.0 + 5.0, 1);
                 var randomHumidity = Math.Round(_random.NextDouble() * 70.0, 1);
 
-                await SendDeviceTelemetryAsync(randomTemperature, randomHumidity, cancellationToken);
+                if (SimpleCache.Send)
+                {
+                    await SendDeviceTelemetryAsync(randomTemperature, randomHumidity, cancellationToken);
+                }
 
-                await Task.Delay(5 * 1000, cancellationToken);
+                await Task.Delay(SimpleCache.IntervallSeconds * 1000, cancellationToken);
             }
         }
 

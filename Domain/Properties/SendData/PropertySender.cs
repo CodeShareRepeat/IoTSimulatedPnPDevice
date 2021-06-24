@@ -16,13 +16,14 @@ namespace IoTSimulatedPnPDevice.Domain.Properties.SendData
             _logger = logger;
         }
 
-        public Task SendProperties()
+        public async Task SendProperties()
         {
             var propertyMessage = PropertyMessage.Create();
 
-            _deviceClient.UpdateReportedPropertiesAsync(propertyMessage);
+            await _deviceClient.UpdateReportedPropertiesAsync(propertyMessage);
 
-            return Task.CompletedTask;
+            _logger.LogInformation("Initital Properties sent.");
+
         }
     }
 }
