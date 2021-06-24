@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
 
@@ -7,7 +6,6 @@ namespace IoTSimulatedPnPDevice.Domain.Telemetry.MessageObjects
 {
     public class TelemetryMessage
     {
-
         public static Message Create(double temp, double hum)
         {
             TelemetryMessageObject messageObject = new(temp, hum);

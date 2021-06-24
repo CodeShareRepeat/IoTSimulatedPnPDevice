@@ -19,7 +19,7 @@ namespace SimulatedDevice
             _logger = InitializeConsoleDebugLogger();
             _logger.LogInformation("Press Control+C to quit the sample.");
 
-            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(100));
+            using CancellationTokenSource cts = new(TimeSpan.FromSeconds(100));
 
             SetCancelationAction(cts);
 
